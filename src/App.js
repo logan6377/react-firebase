@@ -6,9 +6,13 @@ import ProjectDetails from './components/projects/ProjectDetails'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
+import ContextProvider from './components/context/context';
+import ThemeContext from './components/context/ThemeContext';
 
 const App = () => {
   return(
+    <ThemeContext>
+    <ContextProvider>
     <BrowserRouter>
         <div className="App">
           <Navbar />
@@ -21,6 +25,8 @@ const App = () => {
           </Switch>
         </div>
       </BrowserRouter>
+      </ContextProvider>
+      </ThemeContext>
   )
 } 
 
